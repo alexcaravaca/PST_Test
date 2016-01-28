@@ -1,0 +1,14 @@
+{
+    "version": "0.0.1",
+    "paths": {
+        "dev": "./src",
+        "prod": "./build",
+        "images": "/img",
+        "js": "/js",
+        "css": "/css",
+        "data": "/data",
+        "fonts": "/fonts",
+        "root": "/root",
+        "third": "/thirdparty"
+    }
+}

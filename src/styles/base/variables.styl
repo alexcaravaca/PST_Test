@@ -1,0 +1,43 @@
+/* GLOBAL VARIABLES */
+
+
+$size-desktop       = 1610px
+$size-desktop-min   = 1025px
+$size-tablet-min    = 769px
+$size-tablet-max    = 1024px
+$size-mobile-min    = 320px
+$size-mobile-max    = 768px
+
+/* COLOR VARIABLES */
+$bg-color       = #5985b1
+
+$aqua           = #00F5FF
+$blue           = #017cd1
+$gray-blue      = #a0b1bd
+$darker-blue    = #1a1c27
+
+/* GRAYSCALE COLORS */
+$white          = #FFF
+$black          = #000
+$medium-gray    = #7f8b94
+$light-gray     = #f9fafb
+$dark-gray      = #3c3839
+$deep-gray      = #a0b1bc
+
+$gradient-grey = #d1d5d6
+$menu-greycolor = #9ba0a4
+
+/* FONTS */
+$font-normal        = 'Lato', sans-serif
+$font-wt-light      = 300
+$font-wt-regular    = 400
+$font-wt-bold       = 700
+$font-wt-extrabold  = 900
+$font-opensans-light = webfont('OpenSans-Light', 'OpenSans-Light-webfont', true, 'normal');
+
+/* BRAKEPOINTS */
+media_queries = {
+    mobile  : "only screen and (min-width: "+ $size-mobile-min +") and (max-width: "+ $size-mobile-max +")",
+    tablet  : "only screen and (min-width: "+ $size-tablet-min +") and (max-width: "+ $size-tablet-max +")",
+    desktop : "only screen and (min-width: "+ $size-desktop-min +")"
+}

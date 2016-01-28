@@ -1,0 +1,65 @@
+/* MIXINS HERE */
+// Fonts mixin
+font-url(file)
+    return '../fonts/' + file
+
+webfont(family, file, hack-chrome-windows = false, weight = 'normal')
+    @font-face
+        font-family family
+        src url(font-url(file + '.eot'))
+        src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+            url(font-url(file + '.woff')) format('woff'),
+            url(font-url(file + '.ttf')) format('truetype'),
+            url(font-url(file + '.svg#'+ family)) format('svg')
+        font-weight weight
+        font-style normal
+    if hack-chrome-windows
+        @media screen and (-webkit-min-device-pixel-ratio:0)
+            @font-face
+                font-family family;
+                src url(font-url(file + '.svg#'+ family)) format('svg');
+
+
+
+
+
+ellipsis(lines)
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp lines
+    -o-text-overflow ellipsis
+    text-overflow ellipsis
+    height auto
+    overflow hidden
+    
+/* BRAKEPOINTS  */
+for_breakpoint(breakpoints)
+    conditions = ()
+    for breakpoint in breakpoints
+        push(conditions, media_queries[breakpoint])
+    conditions = join(", ", conditions)
+    @media conditions
+        {block}
+        
+new_breakpoint(min, max, orient)
+    if min && max
+        if orient
+            @media all and (min-width: min) and (max-width: max) and (orientation: orient)
+                {block}
+        else 
+            @media all and (min-width: min) and (max-width: max)
+                {block}
+    else if min
+        if orient
+            @media all and (min-width: min) and (orientation: orient)
+                {block}
+        else 
+            @media all and (min-width: min)
+                {block}
+    else if max
+        if orient 
+            @media all and (max-width: max) and (orientation: orient)
+                {block}
+        else 
+            @media all and (max-width: max)
+                {block}

@@ -1,0 +1,17 @@
+//- -------------- Header ---------------- -//
+//- -------------------------------------- -//
+
+//- var pages = [{name: 'Home', url: 'index.html'}, {name: 'qwqwqwqw', url: 'internal.html'}]
+-var myObj = obj;
+header.main__header
+    img.main_img_container(src='img/header-bg.jpg')
+    h2.main__header__title Real Life, Love and Money with
+    h1.main_subheader_title America's most <br />trusted guy
+
+
+    //ul.main__header__nav
+         -for item in myObj
+            li.main__header__nav__item
+                mixin basicLink(item.header, "no")
+
+
